@@ -1,0 +1,47 @@
+.color-1{
+    color:rgb(128, 126, 121)
+}
+
+.color-2{
+   color: rgb(0, 0, 0)
+}
+
+.color-3{
+    color: rgb(234, 226, 198)
+ }
+
+.color-4{
+    color: rgb(111, 106, 78)
+ }
+
+.bg-color{
+    background-color: #DEF4F6
+ }
+
+.btn-color{
+    background-color: rgb(245, 135, 120);
+    color: white;
+    border: none;
+    padding: 10px 20px; 
+    border-radius: 5px;   
+    font-size: 16px; 
+    transition: all 0.3s ease; 
+}
+
+/* body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(45deg,rgb(152, 216, 239) calc(50% + 10vw), rgb(173, 169, 145) 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } */
+
+/* .body-2 {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(45deg, rgb(173, 169, 145) calc(50% + 10vw),  rgb(152, 216, 239)50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } */

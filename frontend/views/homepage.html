@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/frontend/public/styles/homepage.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script type="module" src="../controllers/homepage.js"></script>
+</head>
+<body class="bg-color">
+    <div class="navbar-container" style="position:fixed; top:0; left:0; height:100vh; width:250px; padding-top:20px;">
+      <div class="text-center">
+        <a class="navbar-brand">Welcome student</a><br><br>
+        <img id="profilePic" class="img-fluid mb-3" style="height:170px; width:150px; display:block; margin:0 auto; padding-top:15px;" alt="Student Picture">
+      </div>
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#studentProfileContainer">Personal details</a></li>
+        <li class="nav-item"><a class="nav-link" href="#enrollment">Enrollment</a></li>
+        <li class="nav-item"><a class="nav-link" href="#announcements">Announcements</a></li>
+        <li class="nav-item"><a class="nav-link" href="#faq">FAQs</a></li>
+        <li class="nav-item"><a class="nav-link" href="#support">Support</a></li>
+      </ul>
+
+    <button id="studentLogoutBtn" class="btn btn-success mt-auto">Logout</button>
+  </div>
+
+  <section id="studentProfileContainer" class="mt-5" style="margin-left: 230px;">
+    <div class="container-fluid" style="max-width: 800px; padding: 20px; background-color: rgb(236,248,255); border: 2px solid #333; position: relative;">
+        <i class="bi bi-pencil" style="font-size: 20px; position: absolute; top:20px; right:28px; cursor:pointer;" onclick="toggleEdit()"></i>
+        <div id="successMessage" class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+        <h2 class="text-center text-black">Student details</h2>
+        <div class="table-responsive">
+            <table class="table table-striped mt-3" id="details-table" style="width:750px; max-width:800px; margin:0 auto; border:2px solid #333;">
+                <tbody>
+                    <tr><th>First name</th><td id="firstName"></td></tr>
+                    <tr><th>Last name</th><td id="lastName"></td></tr>
+                    <tr><th>Email</th><td id="email"></td></tr>
+                    <tr><th>Username</th><td id="username"></td></tr>
+                    <tr><th>Gender</th><td id="gender"></td></tr>
+                    <tr><th>Date of birth</th><td id="dateofbirth"></td></tr>
+                    <tr><th>Address</th><td id="address"></td></tr>
+                    <tr><th>Roll no</th><td id="rollno"></td></tr>
+                    <tr><th>Grade</th><td id="grade"></td></tr>
+                    <tr><th>Religion</th><td id="religion"></td></tr>
+                    <tr><th>Hobbies</th><td id="hobbies"></td></tr>
+                    <tr><th>Father</th><td id="father"></td></tr>
+                    <tr><th>Mother</th><td id="mother"></td></tr>
+                    <tr><th>Contact</th><td id="contact"></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<section id="enrollment" class="mt-5" style="margin-left: 230px;">
+    <div class="container-fluid" style="max-width: 800px; padding: 20px; background-color: rgb(236,248,255); border: 2px solid #333; position: relative;">
+      <h2 class="text-center text-black">Enrollment</h2>
+      <div class="table-responsive">
+        <table class="table table-striped mt-3" style="width:750px; max-width:800px; margin:0 auto; border:2px solid #333;">
+          <tbody>
+            <tr><th>Enrollment date</th><td id="enrollmentdate"></td></tr>
+            <tr><th>Departure date</th><td id="departure"></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="announcements" class="mt-5" style="margin-left: 230px;">
+    <div class="container-fluid" style="max-width: 800px; padding: 20px; background-color: rgb(236,248,255); border: 2px solid #333; position: relative;">
+      <h2 class="text-center text-black">Announcements</h2>
+      <div class="row" id="announcementList"></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="mt-5" style="margin-left: 230px;">
+    <div class="container-fluid" style="max-width: 800px; padding: 20px; background-color: rgb(236,248,255); border: 2px solid #333; position: relative;">
+      <h2 class="text-center text-black">FAQs</h2>
+      <div class="accordion" id="faqAccordion"></div>
+    </div>
+  </div>
+</section>
+
+<section id="support" class="mt-5" style="margin-left: 230px;">
+    <div class="container-fluid" style="max-width: 800px; padding: 20px; background-color: rgb(236,248,255); border: 2px solid #333; position: relative;">
+      <h2 class="text-center text-black">Support</h2>
+      <div class="form-group">
+        <textarea id="supportMessage" class="form-control" rows="5" placeholder="Describe your issue here..."></textarea>
+      </div>
+      <button id="submitSupport" class="btn btn-primary mt-3">Submit</button>
+    </div>
+  </div>
+</section>
+
+<!-- ------------------------------------------------------------------ UPPER STUDENT AND LOWER ADMIN ------------------------------------------------------------------ -->
+
+<div class="navbar-container" style="position:fixed; top:0; left:0; height:100vh; width:250px; padding-top:20px;" id="nav-admin">
+  <div class="text-center">
+    <a class="navbar-brand">Welcome admin</a><br><br>
+    </div>
+    <button id="adminLogoutBtn" class="btn btn-success mt-auto">Logout</button>
+</div>
+
+  <div class="container" style="margin-left:250px; margin-top:20px;">
+    <div class="mt-5 mb-5" id="adminView">
+      <h2 class="heading-line">Student profiles</h2><br>
+      <div class="row g-3" id="profileList" style="display: flex; justify-content: center;">
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="position: relative;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailsModalLabel">Student Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <i class="bi bi-pencil" 
+             style="font-size: 18px; position: absolute; top: 230px; right: 28px; cursor: pointer; z-index: 1050; background: white; padding: 5px; border-radius: 50%;" 
+             onclick="toggleEditModal()"></i>
+        </div>
+        <div class="modal-body" style="position: relative;">
+          <img id="modalImage" class="img-fluid mb-3" 
+               style="height:170px; width:150px; display:block; margin:0 auto; padding-top:15px;" 
+               alt="Student Picture">
+          <table class="table" id="details-table-modal">
+            <tr><th>First name</th><td id="modalFirstName"></td></tr>
+            <tr><th>Last name</th><td id="modalLastName"></td></tr>
+            <tr><th>Date of birth</th><td id="modalDateofbirth"></td></tr>
+            <tr><th>Gender</th><td id="modalGender"></td></tr>
+            <tr><th>Address</th><td id="modalAddress"></td></tr>
+            <tr><th>Email</th><td id="modalEmail"></td></tr>
+            <tr><th>Username</th><td id="modalUsername"></td></tr>
+            <tr><th>Grade</th><td id="modalGrade"></td></tr>
+            <tr><th>Roll no</th><td id="modalRollno"></td></tr>
+            <tr><th>Blood group</th><td id="modalBloodgroup"></td></tr>
+            <tr><th>Religion</th><td id="modalReligion"></td></tr>
+            <tr><th>Hobbies</th><td id="modalHobbies"></td></tr>
+            <tr><th>Father</th><td id="modalFather"></td></tr>
+            <tr><th>Mother</th><td id="modalMother"></td></tr>
+            <tr><th>Contact</th><td id="modalContact"></td></tr>
+            <tr><th>Enrollment date</th><td id="modalEnrollmentdate"></td></tr>
+            <tr><th>Departure date</th><td id="modalDeparturedate"></td></tr>
+          </table>
+          <div id="successMessage" class="toast-container position-absolute top-0 end-0 p-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

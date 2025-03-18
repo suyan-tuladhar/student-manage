@@ -1,0 +1,249 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f4f4f4;
+}
+
+.bg-color{
+  background-color: #beddf7;
+}
+
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px; 
+  background-color: #e6f7ff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.navbar-brand {
+  font-size: 30px;
+  color: #007bff; 
+  margin-bottom: 10px; 
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.nav-link {
+  font-size: 25px;
+  color: #007bff;
+  padding: 10px 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover {
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+}
+
+.btn-success {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-success:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+
+.container {
+  margin-left: 240px;
+  margin-top: 20px;
+}
+
+section {
+  margin-bottom: 2em;
+}
+
+ul.list-group {
+  margin-left: 1em;
+}
+
+h2.heading-left {
+  text-align: left;
+  border-bottom: 2px solid #333;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+}
+
+.list-item {
+  margin-bottom: 1em;
+}
+
+#message-box textarea {
+  width: 20%;
+  height: 100px;
+}
+
+#message-box button {
+  margin-top: 1em;
+}
+
+#announcements .card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+#announcements .card:hover {
+  transform: translateY(-6px);
+}
+
+#announcements .card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+#announcements .card-text {
+  font-size: 1rem;
+  color: #555;
+}
+
+#faq .accordion-button {
+  font-weight: bold;
+}
+
+#faq .accordion-body {
+  font-size: 1rem;
+  color: #555;
+}
+
+#support textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  resize: vertical;
+}
+
+#support button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#support button:hover {
+  background-color: #0056b3;
+}
+
+
+#adminView h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+#profileList .student-card:hover {
+  transform: translateY(-8px);
+}
+
+#profileList .card-body {
+  padding: 10px;
+}
+
+#profileList .student-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+#profileList .student-text {
+  font-size: 1rem; 
+  color: #555;
+  margin-bottom: 0.25rem;
+}
+
+#profileList .student-btn {
+  width: 100%;
+  padding: 5px;
+  font-size: 0.8rem;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#profileList .student-btn:hover {
+  background-color: #0056b3;
+}
+
+.navbar-container {
+  background-color: #f8f9fa;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container .navbar-brand {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container .heading-line {
+  margin-left: 10px;
+  border-bottom: 2px solid rgb(10, 14, 27);
+  display: inline-block;
+}
+
+.navbar-container .nav-link {
+  color: #333;
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+
+.navbar-container .nav-link:hover {
+  background-color: #e9ecef;
+  color: #007bff;
+}
+
+.navbar-container #logoutBtn {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.navbar-container #logoutBtn:hover {
+  background-color: #218838;
+}
+
+.container {
+  margin-left: 240px;
+  margin-top: 20px;
+}
+
+input[type="text"] {
+  width: 80%;
+  padding: 5px;
+  height: 30px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
